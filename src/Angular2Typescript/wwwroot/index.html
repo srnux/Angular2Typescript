@@ -1,10 +1,32 @@
-﻿<!DOCTYPE html>
-<html>
+﻿<html>
 <head>
-    <meta charset="utf-8" />
-    <title></title>
+    <meta charset="UTF-8">
+    <title>Angular 2 With Typescript</title>
 </head>
 <body>
-    <script src="scripts/test.js"></script>
+    <!-- 3. Display the application -->
+    <my-app>Loading...</my-app>
+    <!-- ES6-related imports -->
+    <script src="lib/angular2-polyfills.js"></script>
+    <script src="lib/es6-shim.js"></script>
+    <script src="lib/system.js"></script>
+    <script>
+        //configure system loader
+        System.config({
+            packages: {
+                app: {
+                    format: 'register',
+                    defaultExtension: 'js'
+                }
+            }
+        });
+    </script>
+    <script src="lib/rx.js"></script>
+    <script src="lib/angular2.dev.js"></script>
+    <script>
+    //bootstrap
+    System.import('app/boot')
+        .then(null, console.error.bind(console));
+    </script>
 </body>
 </html>
