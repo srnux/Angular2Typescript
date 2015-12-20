@@ -1,0 +1,32 @@
+﻿<html>
+<head>
+    <meta charset="UTF-8">
+    <title>I'm a Hero!</title>
+</head>
+<body>
+    <!-- 3. Display the application -->
+    <hero-app>Loading...</hero-app>
+    <!-- ES6-related imports -->
+    <script src="lib/angular2-polyfills.js"></script>
+    <script src="lib/es6-shim.js"></script>
+    <script src="lib/system.js"></script>
+    <script>
+        //configure system loader
+        System.config({
+            packages: {
+                app: {
+                    format: 'register',
+                    defaultExtension: 'js'
+                }
+            }
+        });
+    </script>
+    <script src="lib/rx.js"></script>
+    <script src="lib/angular2.dev.js"></script>
+    <script>
+    //bootstrap
+    System.import('app/boot')
+        .then(null, console.error.bind(console));
+    </script>
+</body>
+</html>
