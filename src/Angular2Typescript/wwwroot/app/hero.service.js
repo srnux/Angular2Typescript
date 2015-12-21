@@ -42,4 +42,3 @@ System.register(["./mock-heroes", "angular2/core"], function(exports_1) {
         }
     }
 });
-//# sourceMappingURL=hero.service.js.map

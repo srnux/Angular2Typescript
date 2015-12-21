@@ -33,4 +33,3 @@ System.register(["angular2/core"], function(exports_1) {
         }
     }
 });
-//# sourceMappingURL=hero-detail.component.js.map

@@ -14,4 +14,3 @@ System.register(["angular2/platform/browser", "./hero.component"], function(expo
         }
     }
 });
-//# sourceMappingURL=boot.js.map
