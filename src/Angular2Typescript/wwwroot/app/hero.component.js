@@ -42,22 +42,7 @@ System.register(["angular2/core", "./hero-detail.component", "./hero.service", "
                     core_1.Component({
                         selector: "hero-app",
                         template: "\n    <h1>{{title}}</h1>\n    <h2>My Heroes</h2>\n    <ul class=\"heroes\">\n      <li *ngFor=\"#hero of heroes\"\n        [class.selected]=\"hero === selectedHero\"\n        (click)=\"onSelect(hero)\">\n        <span class=\"badge\">{{hero.id}}</span> {{hero.name}}\n      </li>\n    </ul>\n    <my-hero-detail [hero]=\"selectedHero\"></my-hero-detail>\n    <hero-form></hero-form>\n  ",
-                        //  styles: [`
-                        //  .heroes {list-style-type: none; margin-left: 1em; padding: 0; width: 10em;}
-                        //  .heroes li { cursor: pointer; position: relative; left: 0; transition: all 0.2s ease; }
-                        //  .heroes li:hover {color: #369; background-color: #EEE; left: .2em;}
-                        //  .heroes .badge {
-                        //    font-size: small;
-                        //    color: white;
-                        //    padding: 0.1em 0.7em;
-                        //    background-color: #369;
-                        //    line-height: 1em;
-                        //    position: relative;
-                        //    left: -1px;
-                        //    top: -1px;
-                        //  }
-                        //  .selected { background-color: #EEE; color: #369; }
-                        //`],
+                        styles: ["\n    .heroes {list-style-type: none; margin-left: 1em; padding: 0; width: 10em;}\n    .heroes li { cursor: pointer; position: relative; left: 0; transition: all 0.2s ease; }\n    .heroes li:hover {color: #369; background-color: #EEE; left: .2em;}\n    .heroes .badge {\n      font-size: small;\n      color: white;\n      padding: 0.1em 0.7em;\n      background-color: #369;\n      line-height: 1em;\n      position: relative;\n      left: -1px;\n      top: -1px;\n    }\n    .selected { background-color: #EEE; color: #369; }\n  "],
                         directives: [hero_detail_component_1.HeroDetailComponent, hero_form_component_1.HeroFormComponent],
                         //providers: [HeroService]
                         providers: [hero_service_1.HeroService]
@@ -70,3 +55,4 @@ System.register(["angular2/core", "./hero-detail.component", "./hero.service", "
         }
     }
 });
+//# sourceMappingURL=hero.component.js.map

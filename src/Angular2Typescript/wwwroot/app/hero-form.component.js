@@ -46,3 +46,4 @@ System.register(["angular2/core", "./hero"], function(exports_1) {
         }
     }
 });
+//# sourceMappingURL=hero-form.component.js.map
