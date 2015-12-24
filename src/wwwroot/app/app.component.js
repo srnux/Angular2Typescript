@@ -1,3 +1,4 @@
+/// <reference path="../../node_modules/angular2/typings/tsd.d.ts" />
 System.register(["angular2/core"], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -9,29 +10,28 @@ System.register(["angular2/core"], function(exports_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var InputComponent;
+    var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            InputComponent = (function () {
-                function InputComponent() {
+            AppComponent = (function () {
+                function AppComponent() {
                 }
-                InputComponent = __decorate([
+                AppComponent = __decorate([
                     core_1.Component({
-                        selector: "input-app",
+                        selector: "my-app",
                         template: "<p>ASP.NET 5, Gulp, Typescript 1.7, Angular 2, Bootstrap 4</p>"
-                    }),
-                    core_1.View({
-                        directives: []
                     }), 
                     __metadata('design:paramtypes', [])
-                ], InputComponent);
-                return InputComponent;
+                ], AppComponent);
+                return AppComponent;
             })();
-            exports_1("InputComponent", InputComponent);
+            exports_1("AppComponent", AppComponent);
         }
     }
 });
+
+//# sourceMappingURL=../.../wwwroot/app/app.component.js.map

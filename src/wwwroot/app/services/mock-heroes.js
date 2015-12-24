@@ -18,4 +18,5 @@ System.register([], function(exports_1) {
         }
     }
 });
-//# sourceMappingURL=mock-heroes.js.map
+
+//# sourceMappingURL=../../.../wwwroot/app/services/mock-heroes.js.map

@@ -4,7 +4,8 @@ var gulp = require("gulp"),
     clean = require("gulp-clean"),
     merge = require("merge"),
     fs = require("fs"),
-    jshint= require("gulp-jshint");
+    jshint= require("gulp-jshint"),
+    sourcemaps= require("gulp-sourcemaps");
 
 var project = {
     wwwroot: "./wwwroot/"
@@ -21,14 +22,30 @@ var paths = {
 var tsProject = ts.createProject("./scripts/tsconfig.json", { typescript: require("typescript") });
 
 gulp.task("ts-compile", function () {
-    console.log(tsProject);
+    //console.log(tsProject);
+    //var tsSource =  gulp.src(paths.tsSource);  
+    
+    //return merge([
+    //    tsSource.pipe(gulp.dest(paths.tsOutput)),//copy ts for debugger 
+    //    tsSource.pipe(sourcemaps.init())
+    //            .pipe(ts(tsProject)) //transpile
+    //            .pipe(sourcemaps.write(".." + paths.tsOutput)) // build source maps
+    //            .pipe(gulp.dest("." + paths.tsOutput)) //copy js to destination
+    //]);
 
-    var tsResult = gulp.src(paths.tsSource)
-                    .pipe(ts(tsProject));
+    gulp.src(paths.tsSource).pipe(gulp.dest(paths.tsOutput));
 
+    var transpiledSource = gulp.src(paths.tsSource)
+                .pipe(sourcemaps.init())
+                .pipe(ts(tsProject)); //transpile
+    
+    console.log(transpiledSource);
+    
     return merge([
-        tsResult.dts.pipe(gulp.dest(paths.tsDef)),
-        tsResult.js.pipe(gulp.dest(paths.tsOutput))
+        //transpiledSource.dts.pipe(gulp.dest(paths.tsOutput)),//copy ts for debugger 
+        transpiledSource.js
+                .pipe(sourcemaps.write())//.pipe(sourcemaps.write("." + paths.tsOutput)) // build source maps
+                .pipe(gulp.dest(paths.tsOutput)) //copy js to destination
     ]);
 });
 
