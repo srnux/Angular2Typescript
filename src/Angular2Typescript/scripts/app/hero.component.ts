@@ -4,7 +4,6 @@ import {HeroDetailComponent} from "./hero-detail.component";
 import {HeroService} from "./services/hero.service";
 import {HeroFormComponent} from "./hero-form.component";
 
-
 @Component({
     selector: "hero-app",
     template: `
@@ -37,7 +36,6 @@ import {HeroFormComponent} from "./hero-form.component";
     .selected { background-color: #EEE; color: #369; }
   `],
     directives: [HeroDetailComponent, HeroFormComponent],//child component html tags otherwise angular ignores tags
-    //providers: [HeroService]
     providers: [HeroService]
 })
 

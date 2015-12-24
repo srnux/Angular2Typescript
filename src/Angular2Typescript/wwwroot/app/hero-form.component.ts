@@ -1,9 +1,12 @@
+/// <reference path="init-caps-pipe.ts" />
 import {Component} from "angular2/core";
 import {NgForm}    from "angular2/common";
 import { Hero }    from "./hero";
+import {InitCapsPipe} from './init-caps-pipe';
 
 @Component({
     selector: "hero-form",
+    pipes: [InitCapsPipe],
     templateUrl: "templates/hero-form.component.html"
 })
 export class HeroFormComponent {

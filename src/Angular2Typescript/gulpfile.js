@@ -39,7 +39,7 @@ gulp.task("ts-compile", function () {
                 .pipe(sourcemaps.init())
                 .pipe(ts(tsProject)); //transpile
     
-    console.log(transpiledSource);
+    //console.log(transpiledSource);
     
     return merge([
         //transpiledSource.dts.pipe(gulp.dest(paths.tsOutput)),//copy ts for debugger 
