@@ -1,7 +1,7 @@
 ﻿import {Component, OnInit} from "angular2/core";
 import {Hero} from "./hero";
 import {HeroDetailComponent} from "./hero-detail.component";
-import {HeroService} from "./services/hero.service";
+import {HeroService} from "./hero.service";
 import {HeroFormComponent} from "./hero-form.component";
 
 @Component({
