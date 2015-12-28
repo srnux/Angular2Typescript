@@ -5,7 +5,8 @@ var gulp = require("gulp"),
     merge = require("merge"),
     fs = require("fs"),
     jshint= require("gulp-jshint"),
-    sourcemaps= require("gulp-sourcemaps");
+    sourcemaps= require("gulp-sourcemaps"),
+    karmaServer = require('karma').Server;
 
 var project = {
     wwwroot: "./wwwroot/"
@@ -69,6 +70,16 @@ gulp.task("copy", function () {
     ];
 
     gulp.src(libs).pipe(gulp.dest(paths.lib));
+});
+
+/**
+ * Run test once and exit
+ */
+gulp.task('test', function (done) {
+    new karmaServer({
+        configFile: __dirname + '/karma.conf.js',
+        singleRun: true
+    }, done).start();
 });
 
 //gulp.task("copy", function () {
